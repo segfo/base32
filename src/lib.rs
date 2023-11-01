@@ -8,6 +8,9 @@ pub enum Alphabet {
     RFC4648 { padding: bool },
     Crockford,
 }
+pub const CROCKFORD_BASE32: Alphabet = Alphabet::Crockford;
+pub const RFC4648_BASE32: Alphabet = Alphabet::RFC4648 { padding: true };
+pub const RFC4648_BASE32_NOPAD: Alphabet = Alphabet::RFC4648 { padding: false };
 
 const RFC4648_ALPHABET: &'static [u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 const CROCKFORD_ALPHABET: &'static [u8] = b"0123456789ABCDEFGHJKMNPQRSTVWXYZ";
